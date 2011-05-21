@@ -106,3 +106,8 @@ div.post-contents
 {
   color: inherit;
 }
+
+/* Minor fix for fancybox */
+div#fancy_title table td {
+  border: none;
+}
