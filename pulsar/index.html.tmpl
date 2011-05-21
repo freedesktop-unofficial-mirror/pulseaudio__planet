@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title><TMPL_VAR name></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="shortcut icon" type="image/png" href="style/img/pulse-16.png">
+  <meta name="generator" content="<TMPL_VAR generator ESCAPE="HTML">">
+  <link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style/site.css" type="text/css">
+  <link rel="stylesheet" href="style/planet.css" type="text/css">
+  <link rel="stylesheet" href="style/sociable.css" type="text/css">
+  <link rel="stylesheet" href="style/fancybox.css" type="text/css">
+  <TMPL_IF feedtype>
+  <link rel="alternate" href="<TMPL_VAR feed ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">" type="application/<TMPL_VAR feedtype>+xml">
+  </TMPL_IF>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
+  <script type="text/javascript" src="js/jquery.fancybox-1.2.6.min.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+  <script type="text/javascript">
+  jQuery.noConflict();
+
+  jQuery(function(){
+    jQuery('.blogpost img').lazyload();
+
+    jQuery.fn.getTitle = function() {
+      var arr = jQuery("a.fancybox");
+      jQuery.each(arr, function() {
+        var title = jQuery(this).children("img").attr("title");
+        jQuery(this).attr('title',title);
+      })
+    }
+
+    // Supported file extensions
+    var thumbnails = 'a:has(img)[href$=".bmp"],a:has(img)[href$=".gif"],a:has(img)[href$=".jpg"],a:has(img)[href$=".jpeg"],a:has(img)[href$=".png"],a:has(img)[href$=".BMP"],a:has(img)[href$=".GIF"],a:has(img)[href$=".JPG"],a:has(img)[href$=".JPEG"],a:has(img)[href$=".PNG"]';
+
+
+    jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();
+
+    jQuery("a.fancybox").fancybox({
+      'imageScale': true,
+      'padding': 10,
+      'zoomOpacity': true,
+      'zoomSpeedIn': 300,
+      'zoomSpeedOut': 200,
+      'zoomSpeedChange': 200,
+      'overlayShow': true,
+      'overlayColor': "#666666",
+      'overlayOpacity': 0.3,
+      'enableEscapeButton': true,
+      'showCloseButton': true,
+      'hideOnOverlayClick': true,
+      'hideOnContentClick': false,
+      'frameWidth':  560,
+      'frameHeight':  340,
+      'centerOnScroll': true,
+      'easingIn': "easeOutBack",
+      'easingOut': "easeInBack",
+      'easingChange': "easeInOutQuart"
+    });
+});
+  </script>
+
+</head>
+
+<body>
+  <div id="page">
+    <div id="global_domain_bar">
+      <div>
+        <a href="http://pulseaudio.org/"><strong>PulseAudio</strong>.org</a>
+      </div>
+    </div>
+    <div id="planet-banner">
+      <p id="planet-subtitle">
+        <img title="Planet PulseAudio" alt="Planet PulseAudio" src="style/img/sitelogo.png" id="planet-logo" width="630" height="114">
+      </p>
+    </div>
+
+    <div id="content">
+<TMPL_LOOP Items>
+<TMPL_IF new_date>
+<TMPL_UNLESS __FIRST__>
+### End <div class="blogentry">
+</div>
+</TMPL_UNLESS>
+<h2 class="date"><TMPL_VAR new_date></h2>
+</TMPL_IF>
+
+<TMPL_IF new_channel>
+<TMPL_UNLESS new_date>
+### End <div class="blogentry">
+</div>
+</TMPL_UNLESS>
+<div class="blogentry">
+
+<div class="blogger">
+  <a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">">
+    <TMPL_IF channel_face>
+      <img class="face" src="heads/<TMPL_VAR channel_face ESCAPE="HTML">" width="<TMPL_VAR channel_facewidth ESCAPE="HTML">" height="<TMPL_VAR channel_faceheight ESCAPE="HTML">" alt="Face<TMPL_IF author> for <TMPL_VAR author ESCAPE="HTML"></TMPL_IF>" />
+    </TMPL_IF>
+    <br /><TMPL_VAR channel_name>
+    <TMPL_IF channel_nick><br />(<TMPL_VAR channel_nick>)</TMPL_IF>
+  </a>
+</div>
+
+
+</TMPL_IF>
+
+
+<div class="blogpost" <TMPL_IF channel_language> lang="<TMPL_VAR channel_language>"</TMPL_IF>>
+  <TMPL_IF title>
+    <div class="blogpost-header">
+      <h3 class="blogpost-title"<TMPL_IF title_language> lang="<TMPL_VAR title_language>"</TMPL_IF>><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h3>
+    </div>
+  </TMPL_IF>
+  <div class="blogpost-content"<TMPL_IF content_language> lang="<TMPL_VAR content_language>"</TMPL_IF>>
+    <TMPL_VAR content>
+
+### Planet also makes available all of the information from the feed
+### that it can.  Use the 'planet-cache' tool on the cache file for
+### a particular feed to find out what additional keys it supports.
+### Comment extra fields are 'author' and 'category' which we
+### demonstrate below.
+
+  </div>
+
+  <div class="blogpost-footer">
+    <p><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR date></a></p>
+  </div>
+
+  <b class="vt lt"></b><b class="vt rt"></b><b class="hz to"></b><b class="hz bo"></b>
+  <b class="cr tl"></b><b class="cr tr"></b><b class="cr bl"></b><b class="cr br"></b>
+</div>
+
+<TMPL_IF __LAST__>
+### End <div class="blogentry">
+</div>
+</TMPL_IF>
+</TMPL_LOOP>
+
+</div>
+
+<div id="footer">
+  <p><strong>Disclaimer:</strong> Planet PulseAudio automatically reposts blog entries from the PulseAudio community. Entries on this page are owned by their authors. We do not edit, endorse or vouch for the contents of individual posts.</p>
+
+  <h2>Subscriptions</h2>
+    <ul>
+      <TMPL_LOOP Channels>
+        <li>
+        <a href="<TMPL_VAR url ESCAPE="HTML">" title="subscribe"><img src="images/feed-icon-10x10.png" alt="(feed)"></a> <a <TMPL_IF link>href="<TMPL_VAR link ESCAPE="HTML">" </TMPL_IF><TMPL_IF message>class="message" title="<TMPL_VAR message ESCAPE="HTML">"</TMPL_IF><TMPL_UNLESS message>title="<TMPL_VAR title_plain ESCAPE="HTML">"</TMPL_UNLESS>><TMPL_VAR name></a>
+        </li>
+      </TMPL_LOOP>
+  </ul>
+
+  <p><strong>Last updated:</strong> <TMPL_VAR date> <em>All times are UTC.</em></p>
+  <p>Powered by: <a href="http://www.planetplanet.org/"><img src="images/planet.png" width="80" height="15" alt="Planet" border="0"></a></p>
+  <p>Design and layout based on <a href="http://planet.gnome.org/">Planet GNOME</a></p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+*.tmplc
+cache
+output/index.html
+output/atom.xml
+output/foafroll
+output/opml.xml
+output/rss10.xml
+output/rss20.xml
