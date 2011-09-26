@@ -75,7 +75,7 @@
     </div>
     <div id="planet-banner">
       <p id="planet-subtitle">
-        <img title="Planet PulseAudio" alt="Planet PulseAudio" src="style/img/sitelogo.png" id="planet-logo" width="630" height="114">
+        <img title="Planet PulseAudio" alt="Planet PulseAudio" src="style/img/sitelogo.png" id="planet-logo" width="399" height="114">
       </p>
     </div>
 
@@ -144,20 +144,24 @@
 </div>
 
 <div id="footer">
-  <p><strong>Disclaimer:</strong> Planet PulseAudio automatically reposts blog entries from the PulseAudio community. Entries on this page are owned by their authors. We do not edit, endorse or vouch for the contents of individual posts.</p>
-
-  <h2>Subscriptions</h2>
+  <div>
+    <p><strong>Disclaimer:</strong> Planet PulseAudio automatically reposts blog entries from the PulseAudio community. Entries on this page are owned by their authors. We do not edit, endorse or vouch for the contents of individual posts.</p>
+  </div>
+  <div>
+    <h2>Subscriptions</h2>
     <ul>
       <TMPL_LOOP Channels>
         <li>
         <a href="<TMPL_VAR url ESCAPE="HTML">" title="subscribe"><img src="images/feed-icon-10x10.png" alt="(feed)"></a> <a <TMPL_IF link>href="<TMPL_VAR link ESCAPE="HTML">" </TMPL_IF><TMPL_IF message>class="message" title="<TMPL_VAR message ESCAPE="HTML">"</TMPL_IF><TMPL_UNLESS message>title="<TMPL_VAR title_plain ESCAPE="HTML">"</TMPL_UNLESS>><TMPL_VAR name></a>
         </li>
       </TMPL_LOOP>
-  </ul>
-
-  <p><strong>Last updated:</strong> <TMPL_VAR date> <em>All times are UTC.</em></p>
-  <p>Powered by: <a href="http://www.planetplanet.org/"><img src="images/planet.png" width="80" height="15" alt="Planet" border="0"></a></p>
-  <p>Design and layout based on <a href="http://planet.gnome.org/">Planet GNOME</a></p>
+    </ul>
+  </div>
+  <div>
+    <p><strong>Last updated:</strong> <TMPL_VAR date> <em>All times are UTC.</em></p>
+    <p>Powered by: <a href="http://www.planetplanet.org/"><img src="images/planet.png" width="80" height="15" alt="Planet" border="0"></a></p>
+    <p>Design and layout based on <a href="http://planet.gnome.org/">Planet GNOME</a></p>
+  </div>
 </div>
 </div>
 </body>

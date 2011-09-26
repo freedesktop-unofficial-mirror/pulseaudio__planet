@@ -8,29 +8,16 @@ body {
 
 #global_domain_bar
 {
-  background: none repeat scroll 0 0 #FFFFFF;
-  height: 10px;
-  border: 0 none;
-  font-size: 100%;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-  color: #2E3436;
-  font-family: Cantarell,'Droid Sans',Ubuntu,'DejaVu Sans',Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.7em;
+ 
 }
 
 #global_domain_bar a
 {
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px 5px 5px 5px;
   background: url("img/pulse-16.png") no-repeat scroll 8px 7px #FFFFFF;
   color: #555753;
   float: right;
   font-size: 12px;
-  margin-right: 30px;
+  margin: 15px 0;
   padding: 4px 12px 2px 26px;
   text-decoration: none;
   line-height: 1.7em;
@@ -49,7 +36,8 @@ body {
 
 #content {
   margin: 2em;
-  margin: 3em;
+  margin: .5em 3em;
+  border-top: 1px dashed #ccc;
 }
 
 a
@@ -74,8 +62,7 @@ div.post-contents
   margin-right: auto;
   clear: left;
   margin-top: 0;
-  width: 65em;
-  padding: 0 1em;
+  padding: 2em 0 0 2.7em;
 }
 
 
@@ -97,10 +84,41 @@ div.post-contents
   padding-right:  50px;
 }
 
-#footer
-{
-  background: none repeat scroll 0 0 #D3D7CF;
-  color: #555753;
+#footer {
+  overflow: hidden;
+  padding: 2em;
+  background: none repeat scroll 0 0 #83AAD5;
+  color: #fff;
+}
+
+#footer div {
+  border-left: 1px solid #FFFFFF;
+ float: left;
+ min-height: 14em;
+ padding: 0.5em 2em;
+ width: 28%;
+}
+
+#footer div:first-child {
+  background: url("img/volume.png") no-repeat scroll 2em bottom transparent;
+}
+
+#footer {
+  font-size: .8em;
+}
+
+#footer h2 {
+  margin: 0;
+}
+
+#footer ul {
+  margin: .4em 0 0 .4em;
+  list-style-type: none;
+  padding: 0;
+}
+
+#footer ul li {
+  margin-bottom: .2em;
 }
 
 #footer a
