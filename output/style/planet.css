@@ -217,3 +217,10 @@ b.bo { bottom: 0px; left: 0px; background-position: bottom left; }
 	text-align: center;
 	font-size: small;
 }
+
+#social {
+ margin-left: 5em
+}
+#social > div {
+ float: left;
+}
