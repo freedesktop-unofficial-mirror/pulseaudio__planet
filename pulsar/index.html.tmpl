@@ -12,9 +12,8 @@
   <link rel="stylesheet" href="style/planet.css" type="text/css">
   <link rel="stylesheet" href="style/sociable.css" type="text/css">
   <link rel="stylesheet" href="style/fancybox.css" type="text/css">
-  <TMPL_IF feedtype>
-  <link rel="alternate" href="<TMPL_VAR feed ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">" type="application/<TMPL_VAR feedtype>+xml">
-  </TMPL_IF>
+  <link rel="alternate" type="application/atom+xml" title="Planet PulseAudio Atom 1.0" href="<TMPL_VAR link ESCAPE="HTML">atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="Planet PulseAudio RSS 2.0" href="<TMPL_VAR link ESCAPE="HTML">rss20.xml">
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
