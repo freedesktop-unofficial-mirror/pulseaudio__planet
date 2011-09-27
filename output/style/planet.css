@@ -218,6 +218,9 @@ b.bo { bottom: 0px; left: 0px; background-position: bottom left; }
 	font-size: small;
 }
 
+#content{
+  clear: both;
+}
 #social {
  margin-left: 5em
 }
