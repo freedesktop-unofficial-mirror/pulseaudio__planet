@@ -125,12 +125,11 @@ b.bo { bottom: 0px; left: 0px; background-position: bottom left; }
 }
 
 .blogpost-content ul {
-	margin: 0px;
-	margin-left: 1em;
+	margin: 1em;
 	padding: 0px;
 }
 .blogpost-content ul li {
-	margin: 1em;
+	margin: 0.2em 1em;
 	padding: 0px;
 	list-style-image: url(img/pulse-bullet.png);
 }
